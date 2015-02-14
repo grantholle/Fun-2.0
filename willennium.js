@@ -144,8 +144,8 @@
       uh = function () {
         range();
         sonny();
-        // chasingForever();
-        // freshPrince();
+        chasingForever();
+        freshPrince();
 
         $window.resize(function () {
           range();
