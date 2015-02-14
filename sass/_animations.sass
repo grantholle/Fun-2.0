@@ -1,0 +1,45 @@
+// overlay
++keyframes(overlay)
+  from
+    opacity: 1
+  to
+    opacity: 0
+
++keyframes(miami)
+  50%
+    -moz-transform: scale(10)
+    -o-transform: scale(10)
+    -ms-transform: scale(10)
+    -webkit-transform: scale(10)
+    transform: scale(10)
+  100%
+    -moz-transform: scale(1)
+    -o-transform: scale(1)
+    -ms-transform: scale(1)
+    -webkit-transform: scale(1)
+    transform: scale(1)
+
++keyframes(toright)
+  to
+    left: 100%
+
++keyframes(toleft)
+  to
+    left: -50px
+
++keyframes(totop)
+  to
+    top: -50px
+
++keyframes(tobottom)
+  to
+    top: 100%
+
++keyframes(clockwise)
+  to
+    +rotate(360)
+
+
++keyframes(counterclockwise)
+  to
+    +rotate(-360)

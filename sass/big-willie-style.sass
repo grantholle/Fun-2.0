@@ -1,0 +1,103 @@
+// sass --watch sass/big-willie-style.sass:big-willie-style.css --sourcemap=none
+@import mixins
+@import animations
+
+$little-will: 50px
+
+body, html
+  margin: 0
+  padding: 0
+  width: 100%
+  height: 100%
+  // +transition(background, 100ms, ease)
+  overflow: hidden
+
+audio
+  visibility: hidden
+
+img
+  display: block
+
+.overlay
+  position: absolute
+  background: #FF0 url(will.png) center center no-repeat
+  // background: white
+  width: 100%
+  height: 100%
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  z-index: 100
+  +animation-name(overlay)
+  +animation-duration(3s)
+  +animation-delay(1s)
+  +animation-fill(forwards)
+
+.rapper
+  +center
+  z-index: 2
+
+.big-willy-rapper
+  +center
+  +animation-name(counterclockwise)
+  +animation-duration(1.5s)
+  +animation-iteration(infinite)
+  +animation-timing-function(linear)
+
+.big-willy
+  +center
+  width: 82px
+  height: 82px
+  +animation-name(miami)
+  +animation-duration(1111.1111111ms)
+  +animation-iteration(infinite)
+  +animation-timing-function(ease-in-out)
+
+.little-will
+  display: block
+  position: absolute
+  top: 400px
+  width: $little-will
+  height: $little-will
+  z-index: 4
+  +animation-duration(3s)
+  +animation-iteration(infinite)
+  +animation-timing-function(linear)
+
+  img
+    width: 100%
+    +animation-name(clockwise)
+    +animation-duration(1s)
+    +animation-iteration(infinite)
+    +animation-timing-function(linear)
+
+  &.to-right
+    left: -$little-will
+    +animation-name(toright)
+
+  &.to-left
+    left: 100%
+    +animation-name(toleft)
+
+  &.to-top
+    top: 100%
+    +animation-name(totop)
+
+  &.to-bottom
+    top: -$little-will
+    +animation-name(tobottom)
+
+  &.diagonal-to-right
+    left: -$little-will
+
+  &.diagonal-to-left
+    left: 100%
+
+  &.diagonal-to-top
+    top: 100%
+
+  &.diagonal-to-bottom
+    top: -$little-will
+
+

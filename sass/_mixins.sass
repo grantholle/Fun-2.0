@@ -1,0 +1,120 @@
+=center()
+  position: absolute
+  margin: auto
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+
+=transition($transition-property, $transition-time, $method)
+  -webkit-transition: $transition-property $transition-time $method
+  -moz-transition: $transition-property $transition-time $method
+  -ms-transition: $transition-property $transition-time $method
+  -o-transition: $transition-property $transition-time $method
+  transition: $transition-property $transition-time $method
+
+// Animation Shorthand
+// ex: +animation(keyframe_name, 500ms, linera, 0s, forwards, 1)
+=animation($name, $duration, $timing-function, $delay, $direction, $iteration)
+  -webkit-animation: $name $duration $timing-function $delay $direction $iteration
+  -moz-animation: $name $duration $timing-function $delay $direction $iteration
+  -o-animation: $name $duration $timing-function $delay $direction $iteration
+  animation: $name $duration $timing-function $delay $direction $iteration
+
+// Animation Name
+=animation-name($name)
+  -webkit-animation-name: $name
+  -moz-animation-name: $name
+  -o-animation-name: $name
+  animation-name: $name
+
+// Animation Duration
+=animation-duration($duration)
+  -webkit-animation-duration: $duration
+  -moz-animation-duration: $duration
+  -o-animation-duration: $duration
+  animation-duration: $duration
+
+// Animation Timing Function
+=animation-timing-function($timing)
+  -webkit-animation-timing-function: $timing
+  -moz-animation-timing-function: $timing
+  -o-animation-timing-function: $timing
+  animation-timing-function: $timing
+
+// Animation Delay
+=animation-delay($delay)
+  -webkit-animation-delay: $delay
+  -moz-animation-delay: $delay
+  -o-animation-delay: $delay
+  animation-delay: $delay
+
+// Animation Iteration
+=animation-iteration($iteration)
+  -webkit-animation-iteration-count: $iteration
+  -moz-animation-iteration-count: $iteration
+  -o-animation-iteration-count: $iteration
+  animation-iteration-count: $iteration
+
+// Animation Direction
+=animation-direction($animation-direction)
+  -webkit-animation-direction: $animation-direction
+  -moz-animation-direction: $animation-direction
+  -o-animation-direction: $animation-direction
+  animation-direction: $animation-direction
+
+// Animation Fill
+=animation-fill($animation-fill)
+  -webkit-animation-fill-mode: $animation-fill
+  -moz-animation-fill-mode: $animation-fill
+  -o-animation-fill-mode: $animation-fill
+  animation-fill-mode: $animation-fill
+
+// Transition Delay
+=transition-delay($transition-delay)
+  -webkit-transition-delay: $transition-delay
+  -moz-transition-delay: $transition-delay
+  -o-transition-delay: $transition-delay
+  transition-delay: $transition-delay
+
+// generic transform
+=transform($transforms)
+  -moz-transform: $transforms
+  -o-transform: $transforms
+  -ms-transform: $transforms
+  -webkit-transform: $transforms
+  transform: $transforms
+
+// rotate
+=rotate($deg)
+  +transform(rotate(#{$deg}deg))
+ 
+// scale
+=scale($scale)
+  +transform(scale($scale))
+
+// translate
+=translate($x, $y)
+  +transform(translate($x, $y))
+
+// skew
+=skew($x, $y)
+  +transform(skew(#{$x}deg, #{$y}deg))
+
+//transform origin
+=transform-origin($origin)
+  -moz-transform-origin: $origin
+  -o-transform-origin: $origin
+  -ms-transform-origin: $origin
+  -webkit-transform-origin: $origin
+  transform-origin: $origin
+
+=keyframes($name)
+  @-webkit-keyframes #{$name}
+    @content
+  @-moz-keyframes #{$name}
+    @content
+  @-ms-keyframes #{$name}
+    @content
+  @keyframes #{$name}
+    @content
