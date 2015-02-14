@@ -3,6 +3,7 @@
   var $body = $('body'),
       $window = $(window),
       $rapper = $('section.rapper'),
+      $overlay = $('section.overlay'),
       littleWillHeight = 50,
       littleWillWidth = 50,
       littleWill = '<article class="little-will"><img src="will.png"></article>',
@@ -69,7 +70,17 @@
       },
 
       wildWildWest = function () {
-        return Math.floor();
+        $('<img/>').attr('src', 'will.png').load(function (e) {
+          $(this).remove();
+          $overlay.css('background-image', 'url(will.png)');
+
+          setTimeout(function () {
+            $overlay.addClass('gone');
+            $body.find('audio')[0].play();
+            chasingForever();
+            freshPrince();
+          }, 2000);
+        });
       },
 
       topper = function () {
@@ -127,7 +138,7 @@
             style: { left: diagLefter },
             to: {
               left: diagLefter,
-              top: function () { return -1 * maxTop - littleWillHeight }
+              top: function () { return -1 * maxTop - littleWillHeight; }
             }
           },
           {
@@ -135,7 +146,7 @@
             style: { left: diagLefter },
             to: {
               left: diagLefter,
-              top: function () { return maxTop + littleWillHeight }
+              top: function () { return maxTop + littleWillHeight; }
             }
           }
         ]
@@ -144,8 +155,7 @@
       uh = function () {
         range();
         sonny();
-        chasingForever();
-        freshPrince();
+        wildWildWest();
 
         $window.resize(function () {
           range();

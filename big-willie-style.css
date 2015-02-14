@@ -189,7 +189,9 @@ img {
 
 .overlay {
   position: absolute;
-  background: #FF0 url(will.png) center center no-repeat;
+  background-color: #FF0;
+  background-position: center center;
+  background-repeat: no-repeat;
   width: 100%;
   height: 100%;
   top: 0;
@@ -197,22 +199,14 @@ img {
   left: 0;
   right: 0;
   z-index: 100;
-  -webkit-animation-name: overlay;
-  -moz-animation-name: overlay;
-  -o-animation-name: overlay;
-  animation-name: overlay;
-  -webkit-animation-duration: 3s;
-  -moz-animation-duration: 3s;
-  -o-animation-duration: 3s;
-  animation-duration: 3s;
-  -webkit-animation-delay: 1s;
-  -moz-animation-delay: 1s;
-  -o-animation-delay: 1s;
-  animation-delay: 1s;
-  -webkit-animation-fill-mode: forwards;
-  -moz-animation-fill-mode: forwards;
-  -o-animation-fill-mode: forwards;
-  animation-fill-mode: forwards; }
+  opacity: 1;
+  -webkit-transition: opacity 3s ease;
+  -moz-transition: opacity 3s ease;
+  -ms-transition: opacity 3s ease;
+  -o-transition: opacity 3s ease;
+  transition: opacity 3s ease; }
+  .overlay.gone {
+    opacity: 0; }
 
 .rapper {
   position: absolute;
